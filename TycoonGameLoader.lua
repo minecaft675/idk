@@ -260,8 +260,8 @@ function TycoonLoader:CreateMainUI()
     -- Main Frame
     local mainFrame = Instance.new("Frame")
     mainFrame.Name = "MainFrame"
-    mainFrame.Size = UDim2.new(0, 400, 0, 500)
-    mainFrame.Position = UDim2.new(0.5, -200, 0.5, -250)
+    mainFrame.Size = UDim2.new(0, 400, 0, 580)
+    mainFrame.Position = UDim2.new(0.5, -200, 0.5, -290)
     mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
     mainFrame.BorderSizePixel = 0
     mainFrame.Parent = mainHubGui
@@ -291,6 +291,7 @@ function TycoonLoader:CreateMainUI()
     local worldButtons = {
         {name = "🏗️ Enter SharedWorld", color = Color3.fromRGB(50, 200, 50), action = "SharedWorld"},
         {name = "🧪 Sandbox+ (Premium)", color = Color3.fromRGB(255, 150, 50), action = "SandboxPlus"},
+        {name = "📖 Factory Encyclopedia", color = Color3.fromRGB(100, 150, 255), action = "Encyclopedia"},
         {name = "⚙️ Settings", color = Color3.fromRGB(100, 100, 100), action = "Settings"},
         {name = "👑 Admin Panel", color = Color3.fromRGB(255, 50, 50), action = "Admin"}
     }
@@ -865,6 +866,14 @@ sandboxBtn.MouseButton1Click:Connect(function()
     remotes.TeleportToWorld:FireServer("SandboxPlus")
 end)
 
+local encyclopediaBtn = mainFrame:WaitForChild("EncyclopediaButton")
+
+encyclopediaBtn.MouseButton1Click:Connect(function()
+    -- Open Factory Encyclopedia
+    local FactoryEncyclopedia = require(ReplicatedStorage.TycoonGUIs:WaitForChild("FactoryEncyclopediaUI"))
+    FactoryEncyclopedia:ToggleEncyclopedia()
+end)
+
 settingsBtn.MouseButton1Click:Connect(function()
     -- Open settings menu
     print("⚙️ Settings menu opened")
@@ -906,6 +915,8 @@ function TycoonLoader:Initialize()
     self:CreateBonusSystems()
     self:CreateTeleportationSystem()
     self:CreateCompactAdminUI()
+    self:CreateMachineSystem()
+    self:CreateFactoryEncyclopedia()
     self:SetupRemoteHandlers()
     self:CreateClientScripts()
     
@@ -949,6 +960,30 @@ function TycoonLoader:CreateCompactAdminUI()
     compactAdminScript.Source = compactAdminCode
     
     print("👑 Compact Admin UI created!")
+end
+
+-- 🏭 CREATE MACHINE SYSTEM
+function TycoonLoader:CreateMachineSystem()
+    local machineModule = Instance.new("ModuleScript")
+    machineModule.Name = "MachineSystem"
+    machineModule.Parent = ServerStorage
+    
+    local machineCode = require(script.Parent.MachineSystem)
+    machineModule.Source = machineCode
+    
+    print("🏭 Machine System created! (45 machines total)")
+end
+
+-- 📖 CREATE FACTORY ENCYCLOPEDIA
+function TycoonLoader:CreateFactoryEncyclopedia()
+    local encyclopediaModule = Instance.new("ModuleScript")
+    encyclopediaModule.Name = "FactoryEncyclopediaUI"
+    encyclopediaModule.Parent = ReplicatedStorage.TycoonGUIs
+    
+    local encyclopediaCode = require(script.Parent.FactoryEncyclopediaUI)
+    encyclopediaModule.Source = encyclopediaCode
+    
+    print("📖 Factory Encyclopedia created!")
 end
 
 -- 🚀 START THE ENGINE
