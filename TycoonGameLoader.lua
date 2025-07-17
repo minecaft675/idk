@@ -719,22 +719,18 @@ local AdminSystem = require(script.Parent.AdminSystem)
 local SharedWorld = require(script.Parent.SharedWorldSystem)
 local SandboxPlus = require(script.Parent.SandboxPlusSystem)
 local BonusSystems = require(script.Parent.BonusSystems)
+local TeleportationSystem = require(script.Parent.TeleportationSystem)
 
 local remotes = ReplicatedStorage.TycoonRemotes
 
 -- 🏛️ MAIN HUB HANDLERS
 remotes.TeleportToWorld.OnServerEvent:Connect(function(player, worldType)
     if worldType == "SharedWorld" then
-        print(player.Name .. " teleporting to SharedWorld")
-        -- Teleport logic here
+        TeleportationSystem:TeleportToSharedWorld(player)
     elseif worldType == "SandboxPlus" then
-        if SandboxPlus:HasGamepass(player) then
-            print(player.Name .. " teleporting to Sandbox+")
-            -- Teleport logic here
-        else
-            -- Prompt gamepass purchase
-            game:GetService("MarketplaceService"):PromptGamePassPurchase(player, ]] .. CONFIG.SANDBOX_GAMEPASS_ID .. [[)
-        end
+        TeleportationSystem:TeleportToSandbox(player)
+    elseif worldType == "MainHub" then
+        TeleportationSystem:TeleportToMainHub(player)
     end
 end)
 
@@ -908,13 +904,16 @@ function TycoonLoader:Initialize()
     self:CreateSharedWorldSystem()
     self:CreateSandboxSystem()
     self:CreateBonusSystems()
+    self:CreateTeleportationSystem()
+    self:CreateCompactAdminUI()
     self:SetupRemoteHandlers()
     self:CreateClientScripts()
     
     print("✅ TYCOON ENGINE FULLY LOADED!")
     print("🎮 Press G in-game to open main menu")
-    print("👑 Admin tools ready for superadmin")
+    print("👑 Click crown (👑) in corner for admin tools")
     print("🌍 3 worlds: Main Hub ↔ SharedWorld ↔ Sandbox+")
+    print("📋 Check README.md for complete setup instructions")
     
     -- 💀 SELF-DESTRUCT (optional)
     if not CONFIG.DEBUG_MODE then
@@ -922,6 +921,34 @@ function TycoonLoader:Initialize()
         print("💀 Self-destructing loader...")
         script:Destroy()
     end
+end
+
+-- 🌍 CREATE TELEPORTATION SYSTEM
+function TycoonLoader:CreateTeleportationSystem()
+    local teleportModule = Instance.new("ModuleScript")
+    teleportModule.Name = "TeleportationSystem"
+    teleportModule.Parent = ServerStorage
+    teleportModule.Source = require(script.Parent.TeleportationSystem)
+    
+    -- Initialize the teleportation system
+    spawn(function()
+        local TeleportationSystem = require(teleportModule)
+        TeleportationSystem:Initialize()
+    end)
+    
+    print("🌍 Teleportation System created!")
+end
+
+-- 👑 CREATE COMPACT ADMIN UI
+function TycoonLoader:CreateCompactAdminUI()
+    local compactAdminScript = Instance.new("LocalScript")
+    compactAdminScript.Name = "CompactAdminUI"
+    compactAdminScript.Parent = ReplicatedStorage.TycoonGUIs
+    
+    local compactAdminCode = require(script.Parent.CompactAdminUI)
+    compactAdminScript.Source = compactAdminCode
+    
+    print("👑 Compact Admin UI created!")
 end
 
 -- 🚀 START THE ENGINE
