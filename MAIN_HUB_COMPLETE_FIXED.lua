@@ -9,8 +9,8 @@ print("🏠 MAIN HUB SYSTEM - AUTO-BUILDING ALL COMPONENTS...")
 -- ⚙️ CONFIGURATION
 local SUPERADMIN_ID = 2500153124  -- LeviStopMo2021's User ID
 local MAIN_HUB_PLACE_ID = 194805113598787  -- This place ID
-local SHARED_WORLD_PLACE_ID = 0  -- SET TO YOUR SHARED WORLD SUB-PLACE ID
-local SANDBOX_PLUS_PLACE_ID = 0  -- SET TO YOUR SANDBOX+ SUB-PLACE ID
+local SHARED_WORLD_PLACE_ID = 93061321683096  -- SharedWorld sub-place ID
+local SANDBOX_PLUS_PLACE_ID = 107610381689605  -- Sandbox+ sub-place ID
 local SANDBOX_GAMEPASS_ID = 1322694317
 
 -- 🎯 SERVICES
@@ -1059,6 +1059,6 @@ print("🏠 Main Hub Place ID: " .. MAIN_HUB_PLACE_ID)
 print("👑 Superadmin: LeviStopMo2021 (ID: " .. SUPERADMIN_ID .. ")")
 print("🎮 Controls: G=Main Menu, 👑=Admin Tools")
 print("📝 IMPORTANT: Set your SharedWorld and Sandbox+ Place IDs in the configuration!")
-print("⚠️  SHARED_WORLD_PLACE_ID = " .. SHARED_WORLD_PLACE_ID .. " (NEEDS CONFIGURATION)")
-print("⚠️  SANDBOX_PLUS_PLACE_ID = " .. SANDBOX_PLUS_PLACE_ID .. " (NEEDS CONFIGURATION)")
+print("✅ SHARED_WORLD_PLACE_ID = " .. SHARED_WORLD_PLACE_ID .. " (CONFIGURED)")
+print("✅ SANDBOX_PLUS_PLACE_ID = " .. SANDBOX_PLUS_PLACE_ID .. " (CONFIGURED)")
 print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
