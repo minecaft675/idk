@@ -1,5 +1,45 @@
 --[[
-🌍 SHARED WORLD COMPLETE SYSTEM - FIXED & IMPROVED 🌍
+🌍 SHARED WORLD - MULTIPLAYER FACTORY BUILDING 🌍
+
+🏗️ SHARED WORLD FEATURES:
+=======================
+
+📁 DEPLOYMENT:
+1. Open Roblox Studio  
+2. Go to your SharedWorld place (ID: 93061321683096)
+3. Open ServerScriptService
+4. Create new Script named "SharedWorldSystem"
+5. Copy this entire file content
+6. Save and publish
+
+🏭 ALL 45 MACHINES INCLUDED:
+- 🔋 Power Generation (8): Coal Generator, Wind Turbine, Solar Panel, Hydroelectric Dam, Fusion Reactor, Geothermal Plant, Biofuel Generator, Nuclear Reactor
+- 🏗 Production (14): Ore Miner, Oil Pump, Smelter, Refinery, Assembler, Alloy Furnace, Glass Maker, Electronics Fabricator, Chemical Plant, Textile Mill, Food Processor, Quantum Smelter, Nanofabricator, 3D Printer
+- 🚚 Logistics (7): Conveyor Belt, Item Sorter, Drone Hub, Pipeline, Storage Tank, Warehouse, Teleport Pad
+- 🛡 Maintenance (7): Cooler Unit, Auto-Fixer Robot, Pollution Scrubber, Water Purifier, Fire Suppression System, Security Drone Station, Eco Monitor  
+- 🏆 Utility (9): Prestige Monument, Research Lab, Global Event Terminal, Public Showcase Terminal, Eco Garden, Battery Overload Detector, Backup Generator, Advertisement Board, Blueprint Terminal
+
+🎮 PLAYER FEATURES:
+- G Key: SharedWorld menu
+- 👑 Button: Admin tools
+- Save/Load factory layouts
+- Co-owner system (add friends)
+- Public island showcase
+- Global leaderboards
+- Return to hub anytime
+
+💰 ECONOMY SYSTEM:
+- Earn money from machines
+- Factory value tracking
+- Prestige system
+- EcoScore monitoring
+
+✅ MULTIPLAYER READY:
+- Personal factory plots
+- Co-owner building rights
+- Public island visits
+- Global competitions
+
 Put this script in ServerScriptService in your SHARED WORLD sub-place
 This creates multiplayer factory building with saves, co-owners, and global leaderboards
 ]]

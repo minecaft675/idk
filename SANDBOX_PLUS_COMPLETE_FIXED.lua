@@ -1,5 +1,57 @@
 --[[
-🧪 SANDBOX+ COMPLETE SYSTEM - FIXED & IMPROVED 🧪
+🧪 SANDBOX+ PREMIUM CREATIVE MODE 🧪
+
+⚡ UNLIMITED CREATIVE FEATURES:
+============================
+
+📁 DEPLOYMENT:
+1. Open Roblox Studio
+2. Go to your Sandbox+ place (ID: 107610381689605)  
+3. Open ServerScriptService
+4. Create new Script named "SandboxPlusSystem"
+5. Copy this entire file content
+6. Save and publish
+
+🎫 GAMEPASS VERIFICATION:
+- Requires Gamepass ID: 1322694317
+- Automatic verification on entry
+- Kicks players without gamepass
+- LeviStopMo2021 bypasses requirement
+
+🏭 ALL 45 MACHINES - FREE & ENHANCED:
+- ⚡ UNLIMITED POWER: All machines produce infinite energy
+- 💰 ZERO COST: Every machine is completely free
+- 🚀 ENHANCED STATS: Super-powered versions of all machines
+- 🎨 PREMIUM VISUALS: Purple ForceField material with lighting effects
+- 📐 LARGER SIZE: 8x8x8 machines (bigger than normal)
+
+⚡ PREMIUM FEATURES:
+- 🕐 Time Acceleration: 1x, 2x, 4x, 8x speed controls
+- 🌍 Pollution Toggle: Enable/disable environmental effects
+- 💰 Infinite Resources: Unlimited money (999,999,999)
+- 🏗️ Unlimited Building: 500x500 massive plot
+- 💾 Unlimited Saves: Save/load unlimited layouts
+- 🗑️ Clear All: Instant factory reset
+
+🎮 CREATIVE CONTROLS:
+- G Key: Sandbox+ premium menu
+- 👑 Button: Premium admin tools
+- Time controls at top
+- Machine spawner with all 45 machines
+- No money limits or restrictions
+
+📊 NO LEADERBOARD IMPACT:
+- Creative mode stats don't affect main game
+- Separate leaderstats marked as "Creative"
+- Pure sandbox experience
+- No competitive pressure
+
+🔧 SANDBOX-ONLY FEATURES:
+- Enhanced machine effects
+- Premium UI gradients
+- Unlimited build space
+- Creative-only admin tools
+
 Put this script in ServerScriptService in your SANDBOX+ sub-place
 This creates unlimited creative mode with infinite resources and premium features
 ]]
